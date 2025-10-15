@@ -4,22 +4,32 @@
   <meta charset="UTF-8">
   <title>برای تو</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Heart_corazón.svg/1024px-Heart_corazón.svg.png" type="image/png">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #111;
       font-family: 'Tahoma', sans-serif;
+      direction: rtl;
+      height: 100vh;
+      background-image: url('https://raw.githubusercontent.com/ShotGaming1/HBD.M.GIFT/main/a%20romantic%20sunset%20be.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      direction: rtl;
+      color: white;
     }
 
-    .heart-outline {
+    .heart-container {
       position: relative;
-      width: 520px;
-      height: 470px;
+      width: 600px;
+      height: 540px;
     }
 
     svg {
@@ -30,13 +40,13 @@
     .heart-path {
       fill: none;
       stroke: red;
-      stroke-width: 14;
+      stroke-width: 16;
       stroke-linejoin: round;
       animation: blink 1s infinite;
     }
 
     @keyframes blink {
-      0%, 100% { stroke: #900; }
+      0%, 100% { stroke: #c00; }
       50% { stroke: red; }
     }
 
@@ -45,16 +55,24 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
       font-size: 14px;
       text-align: center;
-      width: 280px;
-      line-height: 1.6;
+      width: 250px;
+      line-height: 1.8;
+      color: white;
       z-index: 2;
     }
 
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
     @media (max-width: 600px) {
-      .heart-outline {
+      .heart-container {
         width: 90vw;
         height: auto;
         aspect-ratio: 1 / 1;
@@ -62,24 +80,30 @@
 
       .message {
         font-size: 3.5vw;
-        width: 75%;
-        line-height: 1.5;
+        width: 70%;
       }
 
-      .heart-path {
-        stroke-width: 5vw;
+      audio {
+        width: 90%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="heart-outline">
-    <svg viewBox="0 0 520 470" preserveAspectRatio="xMidYMid meet">
-      <path class="heart-path" d="M260 420 
-        C 70 260, 70 100, 260 160 
-        C 450 100, 450 260, 260 420 Z" />
+  <div class="heart-container">
+    <svg viewBox="0 0 600 540" preserveAspectRatio="xMidYMid meet">
+      <path class="heart-path" d="M300 500 
+        C 100 340, 100 150, 300 220 
+        C 500 150, 500 340, 300 500 Z" />
     </svg>
-    <div class="message">تولدت مبارک... قصه‌ت رو خوندم، ولی کاش می‌ذاشتی یه نقش هم برای من باشه.</div>
+    <div class="message">
+      تولدت مبارک... قصه‌ت رو خوندم، ولی کاش می‌ذاشتی یه نقش هم برای من باشه.
+    </div>
   </div>
+
+  <audio autoplay loop controls>
+    <source src="https://raw.githubusercontent.com/ShotGaming1/HBD.M.GIFT/main/test.mp3" type="audio/mpeg">
+    مرورگر شما از پخش موزیک پشتیبانی نمی‌کند.
+  </audio>
 </body>
 </html>
