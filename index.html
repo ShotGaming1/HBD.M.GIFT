@@ -38,16 +38,14 @@
     }
 
     .heart-path {
-      fill: none;
-      stroke: red;
-      stroke-width: 20;
-      stroke-linejoin: round;
-      animation: blink 1s infinite;
+      fill: red;
+      stroke: none;
+      animation: blinkFill 1s infinite;
     }
 
-    @keyframes blink {
-      0%, 100% { stroke: #c00; }
-      50% { stroke: red; }
+    @keyframes blinkFill {
+      0%, 100% { fill: #c00; }
+      50% { fill: red; }
     }
 
     .message {
