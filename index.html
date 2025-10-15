@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>برای تو</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #111;
+      font-family: 'Tahoma', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      direction: rtl;
+    }
+
+    .heart-outline {
+      position: relative;
+      width: 520px;
+      height: 470px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .heart-path {
+      fill: none;
+      stroke: red;
+      stroke-width: 14;
+      stroke-linejoin: round;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { stroke: #900; }
+      50% { stroke: red; }
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      width: 280px;
+      line-height: 1.6;
+      z-index: 2;
+    }
+
+    @media (max-width: 600px) {
+      .heart-outline {
+        width: 90vw;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .message {
+        font-size: 3.5vw;
+        width: 75%;
+        line-height: 1.5;
+      }
+
+      .heart-path {
+        stroke-width: 5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart-outline">
+    <svg viewBox="0 0 520 470" preserveAspectRatio="xMidYMid meet">
+      <path class="heart-path" d="M260 420 
+        C 70 260, 70 100, 260 160 
+        C 450 100, 450 260, 260 420 Z" />
+    </svg>
+    <div class="message">تولدت مبارک... قصه‌ت رو خوندم، ولی کاش می‌ذاشتی یه نقش هم برای من باشه.</div>
+  </div>
+</body>
+</html>
